@@ -299,7 +299,7 @@ header {
   transition: 1s;
   box-shadow: 1px 10px 10px 1px grey;
 }
-.card .container-card2-info {
+.container-card2-info {
   width: 100%;
   height: 90%;
 
@@ -309,6 +309,9 @@ header {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(20px); /* Effetto di apparizione */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transizione */
 }
 .card .container-card2-info div {
   width: 50%;
@@ -477,6 +480,9 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transform: translateY(20px); /* Effetto di apparizione */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transizione */
 }
 .contenitor-content {
   text-align: center;
@@ -535,6 +541,9 @@ section {
   background-size: cover;
   background-position: center;
   color: black;
+  opacity: 0;
+  transform: translateY(20px); /* Effetto di apparizione */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transizione */
 }
 .container-section-content:nth-of-type(1) {
   background: linear-gradient(
@@ -625,21 +634,23 @@ section {
   align-items: center;
   flex-direction: column;
 }
-#recensioni .container-article {
+
+.container-article {
   width: 90%;
   height: 25%;
-
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-
-  box-shadow: 1px 1px 10px 1px #000000;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  background-color: #00b9c1;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 2rem;
+  background-color: rgb(224, 224, 224);
+  color: black;
+  opacity: 0; /* Inizialmente invisibile */
+  transform: translateY(20px); /* Effetto di apparizione */
+  transition: opacity 1.5s ease, transform 1.5s ease; /* Transizione */
 }
+
 #recensioni .container-article span {
   padding: 0.3rem;
   border: #003b95;
@@ -657,14 +668,15 @@ section {
   margin: 0;
 
   margin-bottom: 0.5rem;
-  color: white;
+
+  color: black;
 }
 #recensioni .container-article h4 {
   font-size: 1.3rem;
   margin: 0;
   margin-bottom: 0.5rem;
 
-  color: white;
+  color: black;
 }
 #recensioni .container-article p {
   text-align: center;
@@ -673,7 +685,7 @@ section {
   margin: 0;
   width: 90%;
   font-family: "Gruppo", sans-serif;
-  color: white;
+  color: black;
 }
 
 #article-prenota {
@@ -713,6 +725,9 @@ section {
   flex-direction: column;
   background-color: white;
   margin: 0;
+  opacity: 0;
+  transform: translateY(20px); /* Effetto di apparizione */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transizione */
 }
 .circle-prenota1,
 .circle-prenota2 {
@@ -760,14 +775,26 @@ footer {
   background-color: #089499;
 
   display: flex;
+
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   font-family: "Quicksand", sans-serif;
   color: white;
   font-size: 0.8rem;
+  opacity: 0;
+  transform: translateY(20px); /* Effetto di apparizione */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transizione */
 }
-
+footer a,
+p {
+  margin: 5px;
+}
+.visible {
+  opacity: 1; /* Rendi l'elemento visibile */
+  transform: translateY(0); /* Rimuovi il trasloco */
+}
 @media (orientation: landscape) and (max-width: 480px) {
   html {
     font-size: 10px;
@@ -1018,6 +1045,17 @@ footer {
     width: 100%;
     height: 100%;
   }
+  footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  footer h4 {
+    font-size: 1.2rem;
+  }
+  footer p,
+  a {
+    margin: 10px;
+  }
 }
 
 /* PC Grandi */
@@ -1176,6 +1214,17 @@ footer {
     width: 100%;
     height: 100%;
   }
+  footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  footer h4 {
+    font-size: 1.2rem;
+  }
+  footer p,
+  a {
+    margin: 10px;
+  }
 }
 
 /* PC Extra Grandi */
@@ -1333,5 +1382,16 @@ footer {
   .container-section-content {
     width: 100%;
     height: 100%;
+  }
+  footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  footer h4 {
+    font-size: 1.2rem;
+  }
+  footer p,
+  a {
+    margin: 10px;
   }
 }

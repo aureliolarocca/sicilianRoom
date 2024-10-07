@@ -69,3 +69,44 @@ slider.addEventListener("scroll", () => {
   buttons.forEach((button) => (button.style.backgroundColor = "grey"));
   buttons[currentIndex].style.backgroundColor = "#067377";
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, options);
+
+  // Osserva gli elementi esistenti
+  const articles = document.querySelectorAll("#recensioni .container-article");
+  articles.forEach((article) => observer.observe(article));
+
+  const cards = document.querySelectorAll(".container-card2-info");
+  cards.forEach((card) => observer.observe(card));
+
+  const contents = document.querySelectorAll(".contenitor-content");
+  contents.forEach((content) => observer.observe(content));
+
+  const sections = document.querySelectorAll(".container-section-content");
+  sections.forEach((section) => observer.observe(section));
+
+  // Aggiungi gli osservatori per .container-circle e footer
+  const circles = document.querySelectorAll(".container-circle");
+
+  circles.forEach((circle) => observer.observe(circle));
+
+  const footer = document.querySelector("footer");
+  if (footer) {
+    observer.observe(footer);
+  }
+});
