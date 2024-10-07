@@ -1,0 +1,747 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  height: auto;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Stile per il nav che contiene il menu hamburger */
+nav {
+  position: fixed; /* Fissa il nav in posizione */
+  z-index: 9999; /* Mantiene il nav sopra gli altri elementi */
+  width: 100%; /* Occupa tutta la larghezza della viewport */
+  top: 0; /* Posiziona il nav nella parte superiore della pagina */
+  left: 0; /* Allinea il nav a sinistra */
+  margin-top: 2rem; /* Distanza dal top */
+  display: flex;
+  justify-content: end; /* Allinea il contenuto a destra */
+  align-items: center;
+  border: 1px solid black;
+}
+
+/* Stili per il menu hamburger */
+.ham-menu {
+  width: auto;
+  height: 1.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 2rem;
+}
+
+/* Stili per le righe del menu hamburger */
+.ham-menu span {
+  width: 2rem;
+  height: 0.2rem;
+  background-color: #067377;
+  margin-bottom: 0.2rem;
+}
+.ham-menu.active .span1 {
+  transform: rotate(45deg); /* Ruota il primo span */
+}
+
+.ham-menu.active .span2 {
+  display: none;
+}
+
+.ham-menu.active .span3 {
+  transform: rotate(-45deg); /* Ruota il terzo span */
+}
+/* Stile iniziale per nascondere il menu */
+.menu {
+  position: fixed; /* Fissa il menu in posizione */
+  top: 0;
+  right: -70%; /* Inizialmente fuori dalla vista */
+  width: 70vw; /* Occupa il 40% della larghezza della viewport */
+  height: 100vh; /* Occupa tutta l'altezza della viewport */
+  background-color: #00b9c1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(
+    -100%
+  ); /* Sposta il menu a sinistra fuori dalla vista */
+  opacity: 0; /* Nasconde il menu */
+  transition: transform 1s ease, opacity 2s ease; /* Transizione per effetto di scorrimento */
+  z-index: -1; /* Deve essere sotto l'icona del menu hamburger */
+}
+
+/* Stile per mostrare il menu quando è attivo */
+.menu-active {
+  right: 0; /* Sposta il menu in vista */
+  transform: translateY(0); /* Riporta il menu in vista */
+  opacity: 1; /* Mostra il menu */
+  font-family: "Quicksand", sans-serif;
+}
+.menu-active ul {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  flex-direction: column;
+
+  width: 90%;
+}
+.menu-active li {
+  list-style-type: none;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.menu-active button {
+  font-family: "Quicksand", sans-serif;
+  border: none;
+  background-color: #089499;
+  font-size: 1.5rem;
+  color: white;
+  padding: 2rem;
+  margin-top: 8rem;
+  border-radius: 1.5rem;
+}
+
+header {
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid yellow;
+}
+.container {
+  height: 300vh; /* Aggiunge altezza per consentire lo scroll */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid red;
+}
+.card {
+  position: sticky;
+  top: 10px;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  border: 1px solid green;
+}
+.card:nth-of-type(1) {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("Catania_illustration.png");
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title-logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+
+  margin: 0;
+  border: 1px solid red;
+}
+.title-logo h1 {
+  font-size: 2.8rem;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  border-bottom: 2px solid #067377;
+}
+.title-logo svg {
+  width: 6rem;
+}
+.card:nth-of-type(1) h3 {
+  font-size: 1.5rem;
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+}
+#visita-catania {
+  font-size: 1;
+  font-weight: 700;
+  font-family: "Quicksand", sans-serif;
+  color: black;
+  margin-top: 0.5rem;
+}
+#prenota {
+  font-family: "Quicksand", sans-serif;
+  border: none;
+  background-color: #089499;
+  font-size: 1.5rem;
+  color: white;
+  padding: 20px;
+  margin-top: 8rem;
+  border-radius: 1.5rem;
+}
+.card:nth-of-type(2) {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("Illustrazione\ catania.jfif");
+
+  background-size: contain;
+  font-family: "Quicksand", sans-serif;
+}
+.container-card2-title,
+.container-card2-point,
+.container-card2-info {
+  width: 100%;
+}
+
+.container-card2-title {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  padding: 0;
+  margin: -2rem 0 0 0;
+  width: 100%;
+  background-color: #089499;
+}
+#title2-card2 {
+  padding: 0;
+  background-color: #089499;
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  border-radius: 0;
+  margin: 0;
+  font-size: 1rem;
+  padding: 1.5rem;
+}
+.card .container-card2-point {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+
+  align-items: center;
+}
+.card .container-card2-point button {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-left: 2rem;
+  margin-right: 5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: #003b95;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.card .container-card2-point h3 {
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #003b95;
+  color: white;
+  border-radius: 1rem;
+}
+.card .container-card2-point h3:hover {
+  padding: 1.2rem;
+  background-color: #003b95;
+  color: white;
+  transition: 1s;
+  box-shadow: 1px 10px 10px 1px grey;
+}
+.card .container-card2-info {
+  width: 100%;
+  height: 90%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-bottom: 3rem;
+}
+.card .container-card2-info div {
+  width: 50%;
+  height: 100%;
+  margin-bottom: 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: start;
+}
+.card .container-card2-info div:nth-of-type(2) {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  margin-bottom: 0;
+
+  flex-direction: column;
+  background-color: #089499;
+}
+.card .container-card2-info div:nth-of-type(1) p {
+  color: #003b95;
+
+  font-weight: 700;
+  background-color: white;
+  text-align: start;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  padding: 0px;
+}
+.card .container-card2-info div:nth-of-type(2) p {
+  margin-left: 1rem;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0;
+  background-color: #089499;
+  margin-left: 1rem;
+}
+
+.card:nth-of-type(3) {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("Illustrazione\ catania.jfif");
+
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container-card3-slider {
+  width: 95%; /* La larghezza del contenitore si adatta alla card */
+  height: 70%;
+
+  display: flex;
+  overflow-x: auto; /* Aggiungi scrolling orizzontale */
+  scroll-snap-type: x mandatory; /* Scroll "snap" orizzontale */
+}
+
+.container-card3-slider div {
+  min-width: 100vw; /* Ogni slide occupa il 100% della larghezza della viewport */
+  height: 100%;
+  scroll-snap-align: start; /* Ogni slide si allinea perfettamente all'inizio durante lo scroll */
+}
+#card-1-photo {
+  background-image: url(Camera\ Da\ Letto.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#card-2-photo {
+  background-image: url(Camera\ Da\ Letto\ 2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#card-3-photo {
+  background-image: url(Divano\ Letto.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#card-4-photo {
+  background-image: url(Soggiorno\ 1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#card-5-photo {
+  background-image: url(Soggiorno\ 2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#card-6-photo {
+  background-image: url(Soggiorno\ 3.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#card-7-photo {
+  background-image: url(Bagno.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.container-button-for-slider {
+  width: 90%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+}
+.container-button-for-slider button {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: grey;
+}
+.container-button-for-slider button:nth-of-type(1) {
+  background-color: #067377;
+}
+main {
+  width: 100vw;
+  height: 110vh;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  min-height: 50vh; /* altezza minima, senza forzare 100vh */
+  max-height: 150vh; /* limite massimo per evitare distorsioni */
+}
+.container-main-title {
+  width: 100%;
+  height: auto;
+  background-color: #00b9c1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-main-title h2 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  padding: 1rem;
+  margin: 0 auto;
+}
+.container-main-content {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.contenitor-content {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contenitor-content {
+  text-align: center;
+}
+.contenitor-content p {
+  font-size: 1rem;
+  margin-top: -0.9rem;
+  color: black;
+  font-family: "Gruppo", sans-serif;
+  font-weight: 700;
+}
+.contenitor-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #00b9c1;
+  font-family: "Gruppo", sans-serif;
+}
+.contenitor-content span {
+  padding: 0.3rem;
+  border: #003b95;
+  background-color: #003b95;
+  font-size: 0.9rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  color: white;
+  font-family: sans-serif;
+}
+.main-content {
+  width: 5rem;
+  height: 5rem;
+  background-color: whitesmoke;
+  box-shadow: 1px 1px 5px 1px grey;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.container-section-content {
+  width: 100%;
+  height: 30%;
+  margin-bottom: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  color: black;
+}
+.container-section-content:nth-of-type(1) {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("Elefante\ piazza\ duomo.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.container-section-content:nth-of-type(2) {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("Castello\ ursino\ catania.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.container-section-content:nth-of-type(3) {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("Playa\ catania.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.container-section-content h3 {
+  color: black;
+  font-family: "Gruppo", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  border-bottom: 1px solid black;
+  margin-bottom: 1rem;
+}
+.container-section-content p {
+  color: black;
+  font-family: "Gruppo", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.container-section-content button {
+  background: none;
+  font-family: "Gruppo", sans-serif;
+  color: black;
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: 1s;
+}
+.container-section-content button:hover {
+  background-color: #00b9c1;
+  font-family: "Gruppo", sans-serif;
+  color: white;
+  font-weight: 700;
+  font-size: 1.4rem;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+#recensioni {
+  width: 100%;
+  height: 110vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: start;
+  background-color: whitesmoke;
+  flex-direction: column;
+}
+#recensioni h2 {
+  width: 100%;
+  background-color: #00b9c1;
+  color: whitesmoke;
+  font-family: "Quicksand", sans-serif;
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+}
+.container-content-article {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+#recensioni .container-article {
+  width: 90%;
+  height: 25%;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+
+  box-shadow: 1px 1px 10px 1px #000000;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  background-color: #00b9c1;
+}
+#recensioni .container-article span {
+  padding: 0.3rem;
+  border: #003b95;
+  background-color: #003b95;
+  font-size: 0.9rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  color: white;
+  font-family: sans-serif;
+}
+
+#recensioni .container-article h3 {
+  font-size: 1.9rem;
+  margin: 0;
+  font-family: "Gruppo", sans-serif;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+#recensioni .container-article h4 {
+  font-size: 1.3rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Gruppo", sans-serif;
+  color: white;
+}
+#recensioni .container-article p {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  width: 90%;
+  font-family: "Gruppo", sans-serif;
+  color: white;
+}
+
+#article-prenota {
+  width: 100%;
+  height: 110vh;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  flex-direction: column;
+  font-family: "Quicksand", sans-serif;
+  background-color: #00b9c1;
+}
+.article-prenota-title {
+  width: 100%;
+  height: 10%;
+  background-color: #00b9c1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.article-prenota-title h2 {
+  color: white;
+  font-size: 1.8rem;
+  text-align: center;
+
+  margin: 0 auto;
+}
+.container-circle {
+  width: 100%;
+  height: 25%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  margin: 0;
+}
+.circle-prenota1,
+.circle-prenota2,
+.circle-prenota3 {
+  width: 4rem;
+  height: 4rem;
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.circle-prenota1 {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg);
+  background-size: cover;
+  background-position: center;
+}
+.circle-prenota2 {
+  background-color: whitesmoke;
+  box-shadow: 1px 1px 1px 1px grey;
+}
+.container-circle button {
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  background-color: #003b95;
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 1px 1px 1px 1px grey;
+  border: none;
+}
+#article-prenota h2,
+p {
+  margin: 0;
+}
+
+#article-prenota p {
+  width: 90%;
+  text-align: center;
+}
+
+footer {
+  margin-top: 0;
+  width: 100%;
+  height: 40vh;
+  background-color: #00b9c1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Quicksand", sans-serif;
+  color: white;
+  border: 1px solid black;
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 14px;
+  }
+}
