@@ -380,37 +380,37 @@ header {
   scroll-snap-align: start; /* Ogni slide si allinea perfettamente all'inizio durante lo scroll */
 }
 #card-1-photo {
-  background-image: url(Camera\ Da\ Letto.jpg);
+  background-image: url(Camera\ Da\ Letto.webp);
   background-size: cover;
   background-position: center;
 }
 #card-2-photo {
-  background-image: url(Camera\ Da\ Letto\ 2.jpg);
+  background-image: url(Camera\ Da\ Letto\ 2.webp);
   background-size: cover;
   background-position: center;
 }
 #card-3-photo {
-  background-image: url(Divano\ Letto.jpg);
+  background-image: url(Divano\ Letto.webp);
   background-size: cover;
   background-position: center;
 }
 #card-4-photo {
-  background-image: url(Soggiorno\ 1.jpg);
+  background-image: url(Soggiorno\ 1.webp);
   background-size: cover;
   background-position: center;
 }
 #card-5-photo {
-  background-image: url(Soggiorno\ 2.jpg);
+  background-image: url(Soggiorno\ 2.webp);
   background-size: cover;
   background-position: center;
 }
 #card-6-photo {
-  background-image: url(Soggiorno\ 3.jpg);
+  background-image: url(Soggiorno\ 3.webp);
   background-size: cover;
   background-position: center;
 }
 #card-7-photo {
-  background-image: url(Bagno.jpg);
+  background-image: url(Bagno.webp);
   background-size: cover;
   background-position: center;
 }
@@ -541,7 +541,7 @@ section {
       rgba(255, 255, 255, 0.7),
       rgba(255, 255, 255, 0.7)
     ),
-    url("Elefante\ piazza\ duomo.jpg");
+    url("Elefante\ piazza\ duomo.webp");
   background-size: cover;
   background-position: center;
 }
@@ -550,7 +550,7 @@ section {
       rgba(255, 255, 255, 0.7),
       rgba(255, 255, 255, 0.7)
     ),
-    url("Castello\ ursino\ catania.jpg");
+    url("Castello\ ursino\ catania.webp");
   background-size: cover;
   background-position: center;
 }
@@ -559,7 +559,7 @@ section {
       rgba(255, 255, 255, 0.7),
       rgba(255, 255, 255, 0.7)
     ),
-    url("Playa\ catania.jpg");
+    url("Playa\ catania.webp");
   background-size: cover;
   background-position: center;
 }
@@ -767,8 +767,6 @@ footer {
   color: white;
   font-size: 0.8rem;
 }
-
-/* Start landscape media */
 
 @media (orientation: landscape) and (max-width: 480px) {
   html {

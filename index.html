@@ -4,28 +4,27 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
+      content="width=device-width, initial-scale=1, maximum-scale=5"
     />
-    <title>Responsive Design Example</title>
+    <title>Sicilian Room</title>
+
+    <!-- Preconnect per migliorare le performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Combinazione di tutti i Google Fonts in una sola richiesta -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gruppo&family=Jacques+Francois+Shadow&family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@300..700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="SICILIAN ROOM LOGO_Tavola disegno 1.svg"
+    />
+
+    <!-- Foglio di stile principale -->
     <link rel="stylesheet" href="prove.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gruppo&family=Jacques+Francois+Shadow&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gruppo&family=Jacques+Francois+Shadow&family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Great+Vibes&family=Gruppo&family=Jacques+Francois+Shadow&family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <nav>
@@ -35,10 +34,8 @@
         <a href="#punti-di-forza">Punti di forza</a>
         <a href="#punti-interesse">Esplora</a>
         <a href="#recensioni">Recensioni</a>
-        <button>
-          <a href="#article-prenota" aria-label="Bottone per prenotare"
-            >Prenota</a
-          >
+        <button aria-label="Bottone per prenotare">
+          <a href="#article-prenota" aria-label="Prenota">Prenota</a>
         </button>
       </div>
       <div class="ham-menu">
@@ -67,10 +64,10 @@
             />
             <h1>Room</h1>
           </div>
-          <h3>Casa vacanza</h3>
+          <h2>Casa vacanza</h2>
           <p id="visita-catania">Visita Catania</p>
-          <button id="prenota">
-            <a href="#article-prenota" aria-label="Bottone prenota">Prenota</a>
+          <button id="prenota" aria-label="Bottone per prenotare">
+            <a href="#article-prenota" aria-label="Prenota">Prenota</a>
           </button>
         </div>
         <div class="card" aria-label="Informazioni sulla casa">
@@ -294,7 +291,7 @@
             </div>
           </div>
         </div>
-        <div class="card" aria-label="Galleria immagini">
+        <div class="card">
           <div id="gallery" class="container-card3-slider">
             <div id="card-1-photo" alt="Camera da letto "></div>
             <div id="card-2-photo" alt="Camera da letto"></div>
@@ -306,10 +303,16 @@
           </div>
           <div
             class="container-button-for-slider"
-            role="Bottoni per cambiare immagini"
+            role="group"
+            aria-label="Bottoni per cambiare immagini"
           >
-            <button></button><button></button><button></button><button></button
-            ><button></button><button></button><button></button>
+            <button aria-label="Immagine 1"></button>
+            <button aria-label="Immagine 2"></button>
+            <button aria-label="Immagine 3"></button>
+            <button aria-label="Immagine 4"></button>
+            <button aria-label="Immagine 5"></button>
+            <button aria-label="Immagine 6"></button>
+            <button aria-label="Immagine 7"></button>
           </div>
         </div>
       </div>
@@ -455,16 +458,27 @@
         <h2>Prenota il tuo soggiorno</h2>
       </div>
       <div class="container-circle">
-        <a href="https://wa.me/393465929785" target="_blank">
-          <div class="circle-prenota1"></div>
+        <a
+          href="https://wa.me/393465929785"
+          target="_blank"
+          aria-label="Contattaci su WhatsApp"
+        >
+          <div
+            class="circle-prenota1"
+            role="img"
+            aria-label="Icona WhatsApp"
+          ></div>
         </a>
-
         <h2>Whatsapp</h2>
         <p>Mandaci un messaggio cliccando direttamente sull'icona qui sopra.</p>
       </div>
+
       <div class="container-circle">
-        <a href="tel:+393465929785">
-          <div class="circle-prenota2">
+        <a
+          href="tel:+393465929785"
+          aria-label="Chiama il nostro numero di assistenza"
+        >
+          <div class="circle-prenota2" role="img" aria-label="Icona telefono">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="54px"
@@ -496,7 +510,7 @@
         </p>
       </div>
     </article>
-    <footer role="Pie di pagina">
+    <footer>
       <h2>Sicilian Room</h2>
       <p>Via Recupero, Catania, 95125</p>
       <p>Tel: +39 3465929785</p>
@@ -512,6 +526,6 @@
       <p>&copy; 2024 Sicilian Room. All rights reserved.</p>
       <p>Sviluppato da :</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
