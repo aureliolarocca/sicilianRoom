@@ -61,6 +61,7 @@ slider.addEventListener("scroll", () => {
   buttons.forEach((button) => (button.style.backgroundColor = "grey"));
   buttons[currentIndex].style.backgroundColor = "#067377";
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   const options = {
     root: null,
@@ -81,9 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const articles = document.querySelectorAll("#recensioni .container-article");
   articles.forEach((article) => observer.observe(article));
-
-  const cards = document.querySelectorAll(".container-card2-info");
-  cards.forEach((card) => observer.observe(card));
 
   const contents = document.querySelectorAll(".contenitor-content");
   contents.forEach((content) => observer.observe(content));

@@ -309,9 +309,6 @@ header {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   margin-bottom: 3rem;
-  opacity: 0;
-  transform: translateY(20px); /* Effetto di apparizione */
-  transition: opacity 0.2s ease, transform 0.2s ease; /* Transizione */
 }
 .card .container-card2-info div {
   width: 50%;
