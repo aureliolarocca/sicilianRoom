@@ -5,6 +5,7 @@ body {
   height: auto;
   width: 100vw;
   overflow-x: hidden;
+  font-family: "Quicksand", sans-serif;
 }
 
 * {
@@ -22,12 +23,46 @@ nav {
   width: 100%; /* Occupa tutta la larghezza della viewport */
   top: 0; /* Posiziona il nav nella parte superiore della pagina */
   left: 0; /* Allinea il nav a sinistra */
-  margin-top: 2rem; /* Distanza dal top */
+  height: 5rem;
   display: flex;
   justify-content: end; /* Allinea il contenuto a destra */
   align-items: center;
+  border: none !important;
+}
+.nav-menu-pc {
+  background-color: #089499;
+  width: 100%;
+  height: 100%;
+  display: none !important;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav-menu-pc a {
+  color: white;
+}
+.nav-menu-pc a:hover {
+  text-decoration: underline;
+}
+.nav-menu-pc button {
+  font-family: "Quicksand", sans-serif;
+  border: none;
+  background-color: #00b9c1;
+  font-size: 0.9rem;
+  color: white;
+  padding: 1rem;
+  border-radius: 1.5rem;
 }
 
+.nav-menu-pc button:hover {
+  font-family: "Quicksand", sans-serif;
+  border: none;
+  background-color: #00b9c1;
+  font-size: 0.9rem;
+  color: white;
+  padding: 1.1rem;
+  border-radius: 1.5rem;
+}
 /* Stili per il menu hamburger */
 .ham-menu {
   width: auto;
@@ -43,7 +78,7 @@ nav {
 .ham-menu span {
   width: 2rem;
   height: 0.2rem;
-  background-color: #067377;
+  background-color: #000000;
   margin-bottom: 0.2rem;
 }
 .ham-menu.active .span1 {
@@ -163,7 +198,7 @@ header {
   font-weight: 500;
   border-bottom: 2px solid #067377;
 }
-.title-logo svg {
+.title-logo img {
   width: 6rem;
 }
 .card:nth-of-type(1) h3 {
@@ -264,7 +299,7 @@ header {
   transition: 1s;
   box-shadow: 1px 10px 10px 1px grey;
 }
-.card .container-card2-info {
+.container-card2-info {
   width: 100%;
   height: 90%;
 
@@ -274,6 +309,9 @@ header {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(20px); /* Effetto di apparizione */
+  transition: opacity 0.2s ease, transform 0.2s ease; /* Transizione */
 }
 .card .container-card2-info div {
   width: 50%;
@@ -345,37 +383,42 @@ header {
   scroll-snap-align: start; /* Ogni slide si allinea perfettamente all'inizio durante lo scroll */
 }
 #card-1-photo {
-  background-image: url(Camera\ Da\ Letto.jpg);
+  background-image: url(Camera\ Da\ Letto.webp);
   background-size: cover;
   background-position: center;
 }
 #card-2-photo {
-  background-image: url(Camera\ Da\ Letto\ 2.jpg);
+  background-image: url(Camera\ Da\ Letto\ 2.webp);
   background-size: cover;
   background-position: center;
 }
 #card-3-photo {
-  background-image: url(Divano\ Letto.jpg);
+  background-image: url(Divano\ Letto.webp);
   background-size: cover;
   background-position: center;
 }
 #card-4-photo {
-  background-image: url(Soggiorno\ 1.jpg);
+  background-image: url(Soggiorno\ 1.webp);
   background-size: cover;
   background-position: center;
 }
 #card-5-photo {
-  background-image: url(Soggiorno\ 2.jpg);
+  background-image: url(Soggiorno\ 2.webp);
   background-size: cover;
   background-position: center;
 }
 #card-6-photo {
-  background-image: url(Soggiorno\ 3.jpg);
+  background-image: url(Soggiorno\ 3.webp);
   background-size: cover;
   background-position: center;
 }
 #card-7-photo {
-  background-image: url(Bagno.jpg);
+  background-image: url(Bagno.webp);
+  background-size: cover;
+  background-position: center;
+}
+#card-8-photo {
+  background-image: url(colazione.webp);
   background-size: cover;
   background-position: center;
 }
@@ -388,8 +431,8 @@ header {
   margin-top: 1rem;
 }
 .container-button-for-slider button {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   border: none;
   background-color: grey;
@@ -411,7 +454,7 @@ main {
 .container-main-title {
   width: 100%;
   height: auto;
-  background-color: #00b9c1;
+  background-color: #089499;
   color: white;
   display: flex;
   flex-direction: column;
@@ -420,7 +463,6 @@ main {
 }
 
 .container-main-title h2 {
-  font-family: "Quicksand", sans-serif;
   font-size: 1.7rem;
   font-weight: 700;
   padding: 1rem;
@@ -443,6 +485,9 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transform: translateY(20px); /* Effetto di apparizione */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transizione */
 }
 .contenitor-content {
   text-align: center;
@@ -451,14 +496,13 @@ main {
   font-size: 1rem;
   margin-top: -0.9rem;
   color: black;
-  font-family: "Gruppo", sans-serif;
+
   font-weight: 700;
 }
 .contenitor-content h3 {
   font-size: 1.3rem;
   font-weight: 600;
   color: #00b9c1;
-  font-family: "Gruppo", sans-serif;
 }
 .contenitor-content span {
   padding: 0.3rem;
@@ -502,31 +546,34 @@ section {
   background-size: cover;
   background-position: center;
   color: black;
+  opacity: 0;
+  transform: translateY(20px); /* Effetto di apparizione */
+  transition: opacity 0.2s ease, transform 0.2s ease; /* Transizione */
 }
 .container-section-content:nth-of-type(1) {
   background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
     ),
-    url("Elefante\ piazza\ duomo.jpg");
+    url("Elefante\ piazza\ duomo.webp");
   background-size: cover;
   background-position: center;
 }
 .container-section-content:nth-of-type(2) {
   background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
     ),
-    url("Castello\ ursino\ catania.jpg");
+    url("Castello\ ursino\ catania.webp");
   background-size: cover;
   background-position: center;
 }
 .container-section-content:nth-of-type(3) {
   background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
     ),
-    url("Playa\ catania.jpg");
+    url("Playa\ catania.webp");
   background-size: cover;
   background-position: center;
 }
@@ -577,7 +624,7 @@ section {
 }
 #recensioni h2 {
   width: 100%;
-  background-color: #00b9c1;
+  background-color: #089499;
   color: whitesmoke;
   font-family: "Quicksand", sans-serif;
   padding: 1rem;
@@ -592,21 +639,23 @@ section {
   align-items: center;
   flex-direction: column;
 }
-#recensioni .container-article {
+
+.container-article {
   width: 90%;
   height: 25%;
-
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-
-  box-shadow: 1px 1px 10px 1px #000000;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  background-color: #00b9c1;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 2rem;
+  background-color: rgb(224, 224, 224);
+  color: black;
+  opacity: 0; /* Inizialmente invisibile */
+  transform: translateY(20px); /* Effetto di apparizione */
+  transition: opacity 1.5s ease, transform 1.5s ease; /* Transizione */
 }
+
 #recensioni .container-article span {
   padding: 0.3rem;
   border: #003b95;
@@ -622,16 +671,17 @@ section {
 #recensioni .container-article h3 {
   font-size: 1.9rem;
   margin: 0;
-  font-family: "Gruppo", sans-serif;
+
   margin-bottom: 0.5rem;
-  color: white;
+
+  color: black;
 }
 #recensioni .container-article h4 {
   font-size: 1.3rem;
   margin: 0;
   margin-bottom: 0.5rem;
-  font-family: "Gruppo", sans-serif;
-  color: white;
+
+  color: black;
 }
 #recensioni .container-article p {
   text-align: center;
@@ -640,24 +690,24 @@ section {
   margin: 0;
   width: 90%;
   font-family: "Gruppo", sans-serif;
-  color: white;
+  color: black;
 }
 
 #article-prenota {
   width: 100%;
-  height: 110vh;
+  height: 100vh;
   display: flex;
-  justify-content: start;
+  justify-content: space-around;
   align-items: center;
 
   flex-direction: column;
   font-family: "Quicksand", sans-serif;
-  background-color: #00b9c1;
+  background-color: white;
 }
 .article-prenota-title {
   width: 100%;
   height: 10%;
-  background-color: #00b9c1;
+  background-color: #089499;
 
   display: flex;
   justify-content: center;
@@ -680,6 +730,9 @@ section {
   flex-direction: column;
   background-color: white;
   margin: 0;
+  opacity: 0;
+  transform: translateY(20px); /* Effetto di apparizione */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transizione */
 }
 .circle-prenota1,
 .circle-prenota2 {
@@ -724,20 +777,29 @@ footer {
   margin-top: 0;
   width: 100%;
   height: auto;
-  background-color: #00b9c1;
-  border: 1px solid black;
+  background-color: #089499;
 
   display: flex;
+
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   font-family: "Quicksand", sans-serif;
   color: white;
   font-size: 0.8rem;
+  opacity: 0;
+  transform: translateY(20px); /* Effetto di apparizione */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transizione */
 }
-
-/* Start landscape media */
-
+footer a,
+p {
+  margin: 5px;
+}
+.visible {
+  opacity: 1; /* Rendi l'elemento visibile */
+  transform: translateY(0); /* Rimuovi il trasloco */
+}
 @media (orientation: landscape) and (max-width: 480px) {
   html {
     font-size: 10px;
@@ -812,9 +874,9 @@ footer {
 }
 /* Fine landscape media */
 
-@media (max-width: 350px) {
+@media (max-width: 375px) {
   html {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
@@ -845,7 +907,7 @@ footer {
     justify-content: center;
     align-items: center;
   }
-  .title-logo svg {
+  .title-logo img {
     width: 7rem;
   }
   .container-content-article {
@@ -896,6 +958,116 @@ footer {
   .card .container-card2-info div:nth-of-type(2) p {
     font-size: 0.9rem;
   }
+  nav {
+    position: fixed; /* Fissa il nav in posizione */
+    z-index: 9999; /* Mantiene il nav sopra gli altri elementi */
+    width: 100%; /* Occupa tutta la larghezza della viewport */
+    top: 0; /* Posiziona il nav nella parte superiore della pagina */
+    left: 0; /* Allinea il nav a sinistra */
+    height: 5rem;
+    display: flex !important;
+    justify-content: end; /* Allinea il contenuto a destra */
+    align-items: center;
+    border: 1px solid black !important;
+  }
+  .nav-menu-pc {
+    background-color: #089499;
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nav-menu-pc a {
+    color: white;
+  }
+  .nav-menu-pc a:hover {
+    text-decoration: underline;
+  }
+  .nav-menu-pc button {
+    font-family: "Quicksand", sans-serif;
+    border: none;
+    background-color: #00b9c1;
+    font-size: 0.9rem;
+    color: white;
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .nav-menu-pc button:hover {
+    font-family: "Quicksand", sans-serif;
+    border: none;
+    background-color: #00b9c1;
+    font-size: 0.9rem;
+    color: white;
+    padding: 1.1rem;
+    border-radius: 1.5rem;
+  }
+  /* Stili per il menu hamburger */
+  .ham-menu {
+    display: none;
+  }
+
+  /* Stili per le righe del menu hamburger */
+  .ham-menu span {
+    display: none;
+  }
+  .ham-menu.active .span1 {
+    display: none;
+  }
+
+  .ham-menu.active .span2 {
+    display: none;
+  }
+
+  .ham-menu.active .span3 {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu-active {
+    display: none;
+  }
+  .menu-active ul {
+    display: none;
+  }
+  .menu-active li {
+    display: none;
+  }
+  .menu-active button {
+    display: none;
+  }
+  section {
+    flex-direction: row;
+
+    height: 50vh;
+  }
+  .container-section-content {
+    width: 100%;
+    height: 100%;
+  }
+  footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  footer h4 {
+    font-size: 1.2rem;
+  }
+  footer p,
+  a {
+    margin: 10px;
+  }
+  .container-button-for-slider button {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: none;
+    background-color: grey;
+  }
 }
 
 /* PC Grandi */
@@ -910,7 +1082,7 @@ footer {
     justify-content: center;
     align-items: center;
   }
-  .title-logo svg {
+  .title-logo img {
     width: 9rem;
   }
   .container-content-article {
@@ -960,6 +1132,117 @@ footer {
   .card .container-card2-info div:nth-of-type(1) p,
   .card .container-card2-info div:nth-of-type(2) p {
     font-size: 1rem;
+  }
+  /* Stili per il menu hamburger */
+  nav {
+    position: fixed; /* Fissa il nav in posizione */
+    z-index: 9999; /* Mantiene il nav sopra gli altri elementi */
+    width: 100%; /* Occupa tutta la larghezza della viewport */
+    top: 0; /* Posiziona il nav nella parte superiore della pagina */
+    left: 0; /* Allinea il nav a sinistra */
+    height: 5rem;
+    display: flex !important;
+    justify-content: end; /* Allinea il contenuto a destra */
+    align-items: center;
+    border: 1px solid black !important;
+  }
+  .nav-menu-pc {
+    background-color: #089499;
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nav-menu-pc a {
+    color: white;
+  }
+  .nav-menu-pc a:hover {
+    text-decoration: underline;
+  }
+  .nav-menu-pc button {
+    font-family: "Quicksand", sans-serif;
+    border: none;
+    background-color: #00b9c1;
+    font-size: 0.9rem;
+    color: white;
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .nav-menu-pc button:hover {
+    font-family: "Quicksand", sans-serif;
+    border: none;
+    background-color: #00b9c1;
+    font-size: 0.9rem;
+    color: white;
+    padding: 1.1rem;
+    border-radius: 1.5rem;
+  }
+  /* Stili per il menu hamburger */
+  .ham-menu {
+    display: none;
+  }
+
+  /* Stili per le righe del menu hamburger */
+  .ham-menu span {
+    display: none;
+  }
+  .ham-menu.active .span1 {
+    display: none;
+  }
+
+  .ham-menu.active .span2 {
+    display: none;
+  }
+
+  .ham-menu.active .span3 {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu-active {
+    display: none;
+  }
+  .menu-active ul {
+    display: none;
+  }
+  .menu-active li {
+    display: none;
+  }
+  .menu-active button {
+    display: none;
+  }
+  section {
+    flex-direction: row;
+
+    height: 50vh;
+  }
+  .container-section-content {
+    width: 100%;
+    height: 100%;
+  }
+  footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  footer h4 {
+    font-size: 1.2rem;
+  }
+  footer p,
+  a {
+    margin: 10px;
+  }
+  .container-button-for-slider button {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: none;
+    background-color: grey;
   }
 }
 
@@ -1025,5 +1308,116 @@ footer {
   .card .container-card2-info div:nth-of-type(1) p,
   .card .container-card2-info div:nth-of-type(2) p {
     font-size: 1.1rem;
+  }
+  /* Stili per il menu hamburger */
+  nav {
+    position: fixed; /* Fissa il nav in posizione */
+    z-index: 9999; /* Mantiene il nav sopra gli altri elementi */
+    width: 100%; /* Occupa tutta la larghezza della viewport */
+    top: 0; /* Posiziona il nav nella parte superiore della pagina */
+    left: 0; /* Allinea il nav a sinistra */
+    height: 5rem;
+    display: flex !important;
+    justify-content: end; /* Allinea il contenuto a destra */
+    align-items: center;
+    border: 1px solid black !important;
+  }
+  .nav-menu-pc {
+    background-color: #089499;
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nav-menu-pc a {
+    color: white;
+  }
+  .nav-menu-pc a:hover {
+    text-decoration: underline;
+  }
+  .nav-menu-pc button {
+    font-family: "Quicksand", sans-serif;
+    border: none;
+    background-color: #00b9c1;
+    font-size: 0.9rem;
+    color: white;
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .nav-menu-pc button:hover {
+    font-family: "Quicksand", sans-serif;
+    border: none;
+    background-color: #00b9c1;
+    font-size: 0.9rem;
+    color: white;
+    padding: 1.1rem;
+    border-radius: 1.5rem;
+  }
+  /* Stili per il menu hamburger */
+  .ham-menu {
+    display: none;
+  }
+
+  /* Stili per le righe del menu hamburger */
+  .ham-menu span {
+    display: none;
+  }
+  .ham-menu.active .span1 {
+    display: none;
+  }
+
+  .ham-menu.active .span2 {
+    display: none;
+  }
+
+  .ham-menu.active .span3 {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu-active {
+    display: none;
+  }
+  .menu-active ul {
+    display: none;
+  }
+  .menu-active li {
+    display: none;
+  }
+  .menu-active button {
+    display: none;
+  }
+  section {
+    flex-direction: row;
+
+    height: 50vh;
+  }
+  .container-section-content {
+    width: 100%;
+    height: 100%;
+  }
+  footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  footer h4 {
+    font-size: 1.2rem;
+  }
+  footer p,
+  a {
+    margin: 10px;
+  }
+  .container-button-for-slider button {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: none;
+    background-color: grey;
   }
 }

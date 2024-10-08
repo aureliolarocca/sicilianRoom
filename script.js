@@ -12,7 +12,7 @@ const span3 = document.querySelector(".span3");
 document.addEventListener("DOMContentLoaded", function () {
   const hamMenu = document.querySelector(".ham-menu");
   const menu = document.querySelector(".menu");
-  const menuItems = menu.querySelectorAll("li"); // Seleziona tutti gli <li> all'interno del menu
+  const menuItems = menu.querySelectorAll("li");
 
   if (!hamMenu || !menu) {
     console.error("Elementi mancanti nel DOM");
@@ -21,38 +21,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function toggleMenu() {
     menu.classList.toggle("menu-active");
-    hamMenu.classList.toggle("active"); // Aggiunge/rimuove la classe 'active' per trasformare gli span
+    hamMenu.classList.toggle("active");
   }
 
   function closeMenu() {
     menu.classList.remove("menu-active");
-    hamMenu.classList.remove("active"); // Rimuove la classe 'active' per ripristinare gli span
+    hamMenu.classList.remove("active");
   }
 
   hamMenu.addEventListener("click", toggleMenu);
 
-  // Aggiungi un event listener per ogni elemento di menu
   menuItems.forEach((item) => {
     item.addEventListener("click", closeMenu);
   });
 });
-///////
-///////
-// Funzione per mostrare la slide attuale
+
 function showSlide(index) {
-  // Calcola la posizione in base alla larghezza della slide
   const slideWidth = slides[0].offsetWidth;
   slider.scrollTo({
     left: slideWidth * index,
     behavior: "smooth",
   });
 
-  // Aggiorna lo stile dei pulsanti per indicare quale slide è attiva
   buttons.forEach((button) => (button.style.backgroundColor = "grey"));
   buttons[index].style.backgroundColor = "#067377";
 }
 
-// Aggiungi un event listener ai pulsanti per cambiare slide
 buttons.forEach((button, index) => {
   button.addEventListener("click", () => {
     currentIndex = index;
@@ -60,12 +54,10 @@ buttons.forEach((button, index) => {
   });
 });
 
-// Puoi anche aggiungere il supporto per lo swipe manuale (opzionale)
 slider.addEventListener("scroll", () => {
   const slideWidth = slides[0].offsetWidth;
   currentIndex = Math.round(slider.scrollLeft / slideWidth);
 
-  // Aggiorna lo stile dei pulsanti per indicare quale slide è attiva
   buttons.forEach((button) => (button.style.backgroundColor = "grey"));
   buttons[currentIndex].style.backgroundColor = "#067377";
 });
@@ -87,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const observer = new IntersectionObserver(observerCallback, options);
 
-  // Osserva gli elementi esistenti
   const articles = document.querySelectorAll("#recensioni .container-article");
   articles.forEach((article) => observer.observe(article));
 
@@ -100,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".container-section-content");
   sections.forEach((section) => observer.observe(section));
 
-  // Aggiungi gli osservatori per .container-circle e footer
   const circles = document.querySelectorAll(".container-circle");
 
   circles.forEach((circle) => observer.observe(circle));
